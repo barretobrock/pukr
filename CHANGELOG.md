@@ -15,6 +15,11 @@ _Note: 'Unreleased' section below is used for untagged changes that will be issu
 #### Security
 __BEGIN-CHANGELOG__
  
+### [0.0.2] - 2022-05-01
+#### Added
+ - Support for other extra items in log format
+ - Uncaught exceptions now properly logged (as `CRITICAL`) 
+ 
 ### [0.0.1] - 2022-04-24
 #### Added
  - Initialized repo
