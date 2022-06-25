@@ -15,6 +15,11 @@ _Note: 'Unreleased' section below is used for untagged changes that will be issu
 #### Security
 __BEGIN-CHANGELOG__
  
+### [0.0.3] - 2022-06-25
+#### Added
+ - Custom handler `InterceptHandler`
+ - `retention` & `rotation` args with default
+ 
 ### [0.0.2] - 2022-05-01
 #### Added
  - Support for other extra items in log format

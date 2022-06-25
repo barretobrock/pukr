@@ -24,7 +24,8 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 
 
 def get_logger(log_name: str, log_dir_path: Path = None, show_backtrace: bool = True,
-               base_level: str = 'DEBUG', config_extras: Dict[str, Optional[str]] = None) -> logger:
+               base_level: str = 'DEBUG', rotation: str = '7 days', retention: str = '30 days',
+               config_extras: Dict[str, Optional[str]] = None) -> logger:
     """Retrieves the loguru.logger object with proper config set up
 
     Args:
@@ -36,6 +37,8 @@ def get_logger(log_name: str, log_dir_path: Path = None, show_backtrace: bool = 
                 Pathlib will create such if it detects that it doesn't yet exist.
         show_backtrace: if True, will leverage loguru's backtrace feature. This is a risky thing to use for
             production environments
+        rotation: the period that covers a single log file
+        retention: how long log files are kept
         base_level: the minimum log level to send entries to. Note that currently this is for all sinks used.
         config_extras: a dict of any extra
 
@@ -63,8 +66,8 @@ def get_logger(log_name: str, log_dir_path: Path = None, show_backtrace: bool = 
         handlers.append({
             'sink': log_dir_path.joinpath(f'{log_name}.log'),
             'level': base_level,
-            'rotation': '1 day',
-            'retention': '30 days',
+            'rotation': rotation,
+            'retention': retention,
             'format': BASE_FORMAT,
             'enqueue': True,
             'backtrace': show_backtrace
