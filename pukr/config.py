@@ -1,11 +1,12 @@
+from pathlib import Path
 import sys
 from typing import (
     Dict,
-    Optional
+    Optional,
 )
-from pathlib import Path
-from loguru import logger
 
+from loguru import logger
+from loguru._logger import Logger as PukrLog
 
 # This is the general format most logs will use
 BASE_FORMAT = '<green>{time:YYYY-MM-DD HH:mm:ss.SSS}</green> | <level>{level: <8}</level> | ' \
@@ -25,7 +26,7 @@ def handle_exception(exc_type, exc_value, exc_traceback):
 
 def get_logger(log_name: str, log_dir_path: Path = None, show_backtrace: bool = True,
                base_level: str = 'DEBUG', rotation: str = '7 days', retention: str = '30 days',
-               config_extras: Dict[str, Optional[str]] = None) -> logger:
+               config_extras: Dict[str, Optional[str]] = None) -> PukrLog:
     """Retrieves the loguru.logger object with proper config set up
 
     Args:
