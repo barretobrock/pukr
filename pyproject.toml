@@ -22,11 +22,11 @@ loguru = "~0"
 # example = { version = ">=1.7.0", optional = true }
 
 [tool.poetry.dev-dependencies]
-pre-commit = "~2"
+pre-commit = "~3"
 pytest = "~7"
-pytest-cov = "~3"
-flake8 = "~4"
-tox = "~3"
+pytest-cov = "~4"
+flake8 = "~6"
+tox = "~4"
 
 [tool.isort]
 profile = 'black'
