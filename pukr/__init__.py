@@ -4,5 +4,5 @@ from .config import (
 )
 from .custom_handlers import InterceptHandler
 
-__version__ = '0.0.4'
-__update_date__ = '2022-08-20_16:44:17'
+__version__ = '0.1.0'
+__update_date__ = '2023-06-18_10:53:46'
