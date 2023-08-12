@@ -4,7 +4,7 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry]
 name = "pukr"
-version = '0.1.0'
+version = '0.1.1'
 description = "A place to store personal log config files (short for puukuur - woodshed)"
 authors = ["bobrock <bobrock@tuta.io>"]
 license = "MIT"
